@@ -1,61 +1,73 @@
-// lấy ra id của thẻ chứa các sách
 const bookContainer = document.getElementById("book-container");
-// lấy ra danh sách sách từ localStorage
+const categoryItems = document.querySelectorAll(".category-item");
+
 const books = JSON.parse(localStorage.getItem("books")) || [];
 
-// Hàm để định dạng tiền tệ (thêm dấu phẩy)
-const formatCurrency = (amount) => {
-    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-};
+const formatCurrency = (amount) =>
+    amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-let html = ``;
 
-books.forEach((book) => {
-    // 1. Lấy dữ liệu từ localStorage (ép kiểu số để tính toán)
-    const originalPrice = book.money;
-    const discountPercent = book.discount || 0;
+// ===== HÀM RENDER =====
+function renderBooks(bookArray) {
+    let html = "";
 
-    // 2. Tính toán giá sau khi giảm
-    const discountedPrice = Math.round(originalPrice - (originalPrice * discountPercent) / 100);
+    if (bookArray.length === 0) {
+        bookContainer.innerHTML = "<p>Không có sách thuộc thể loại này.</p>";
+        return;
+    }
 
-    // 3. Tạo chuỗi HTML
-    html += `
-    <a href="./html/detail-book.html?${book.id}" class="w-full bg-white rounded-lg shadow hover:shadow-md overflow-hidden flex flex-col">
-        <img src="${book.image}" alt="${book.name}" class="" />
-        <div class="p-5 flex-1 flex flex-col justify-between">
+    bookArray.forEach((book) => {
+        const originalPrice = book.money;
+        const discountPercent = book.discount || 0;
+        const discountedPrice = Math.round(
+            originalPrice - (originalPrice * discountPercent) / 100
+        );
+
+        html += `
+        <a href="./html/detail-book.html?${book.id}" class="book-card">
+          <img src="${book.image}" alt="${book.name}">
+          <div class="book-content">
             <div>
-                <span class="block overflow-hidden line-clamp-1 text-[#808089] text-[12px] uppercase font-normal mb-1"> 
-                    ${book.author} 
-                </span>
-                <h1 class="font-medium text-lg line-clamp-2">${book.name}</h1>
-                <div class="flex items-center gap-2 ">
-                    <span class="text-red-600 text-xl font-bold">
-                        ${formatCurrency(discountedPrice)}₫
-                    </span>
-                    ${
-                        discountPercent > 0
-                            ? `
-                        <span class="bg-red-100 text-red-600 text-xs font-bold px-1.5 py-0.5 rounded border border-red-200">
-                            -${discountPercent}%
-                        </span>
-                    `
-                            : ""
-                    }
-                    ${
-                        discountPercent > 0
-                            ? `
-                    <p class="text-gray-400 text-sm line-through">
-                        ${formatCurrency(originalPrice)}₫
-                    </p>
-                `
-                            : ""
-                    }
-                </div>
+              <span class="book-author line-clamp-1">${book.author}</span>
+              <h1 class="book-title line-clamp-2">${book.name}</h1>
+              <div class="book-price">
+                <span class="price-now">${formatCurrency(discountedPrice)}₫</span>
+                ${
+                    discountPercent > 0
+                        ? `<span class="discount-tag">-${discountPercent}%</span>
+                           <span class="price-old">${formatCurrency(originalPrice)}₫</span>`
+                        : ""
+                }
+                <span class="category-tag">${book.category}</span>
+              </div>
             </div>
-        </div>
-    </a>
-    `;
+          </div>
+        </a>
+        `;
+    });
+
+    bookContainer.innerHTML = html;
+}
+
+
+// ===== CLICK CATEGORY =====
+categoryItems.forEach((item) => {
+    item.addEventListener("click", function () {
+        console.log(item);
+        const selectedCategory = this.textContent.trim();
+        console.log(selectedCategory);
+        const filteredBooks = books.filter(
+            (book) => book.category == selectedCategory
+        );
+
+        renderBooks(filteredBooks);
+
+        // optional: thêm active
+        categoryItems.forEach(i => i.classList.remove("active"));
+        this.classList.add("active");
+    });
 });
 
-// chèn các thẻ HTML vào trong thẻ chứa sách
-bookContainer.innerHTML = html;
+
+// ===== LOAD ALL BOOKS KHI VÀO TRANG =====
+renderBooks(books);

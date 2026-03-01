@@ -20,7 +20,7 @@ btnDelete.addEventListener("click", () => {
             icon: "success",
             willClose: () => {
                 //Chuyển hướng về trang chủ
-                window.location.href = "/index.html";
+                window.location.href = "/spck-bookway-nhom6/index.html";
             },
         });
     }

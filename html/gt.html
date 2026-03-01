@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -8,91 +8,105 @@
         <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <link rel="stylesheet" href="font-awesome-6.5.1-pro-full/css/all.css" />
-        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="/spck-bookway-nhom6/css/gt.css" />
     </head>
     <body class="bg-pink-50">
-        <div class="w-full flex h-12 justify-center items-center text-lg sm:text-xl bg-[#EFFFF4] text-green-600 font-semibold">Chào Mừng Bạn Đến Với BookStore</div>
+        <div class="top-banner">Chào Mừng Bạn Đến Với Book Way</div>
 
-        <section class="bg-white">
-            <div class="flex flex-col lg:flex-row h-auto text-center shadow-sm border-b-2 border-b-gray-300">
-                <!-- Logo -->
-                <div class="w-full lg:w-[15%] flex flex-col items-center py-3">
-                    <div class="text-2xl sm:text-3xl font-bold mb-1 text-blue-400">BookStore</div>
-                    <div class="font-bold text-lg sm:text-xl text-blue-500">Tốt & Nhanh</div>
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-wrapper">
+                <!-- LEFT: LOGO -->
+                <div class="header-logo">
+                    <div class="logo-title">Book Way</div>
+                    <div class="logo-sub">Tốt & Nhanh</div>
                 </div>
 
-                <div class="flex-1 px-4 mt-2 lg:mt-0">
-                    <div class="bg-white flex rounded-md border items-center">
-                        <div class="ml-2 text-gray-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <!-- CENTER: SEARCH + CATEGORY -->
+                <div class="header-center">
+                    <div class="search-box">
+                        <div class="search-icon">
+                            <!-- SVG giữ nguyên -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                             </svg>
                         </div>
-                        <input type="text" placeholder="Tìm kiếm sách..." class="input w-full h-10 sm:h-12 text-[16px] rounded-lg focus:outline-none" />
-                        <button class="hidden sm:flex w-[20%] justify-center items-center text-blue-600 font-bold hover:bg-slate-200 rounded-r-md transition duration-300">Tìm</button>
+
+                        <input type="text" placeholder="Tìm kiếm sách..." />
+
+                        <button class="search-btn">Tìm</button>
                     </div>
 
-                    <div class="hidden md:flex flex-wrap justify-center lg:justify-start">
-                        <p class="my-3 ml-2 font-bold text-gray-400">Thể Loại:</p>
-                        <div class="flex flex-wrap">
-                            <p class="m-2 my-3 ml-2 font-semibold text-gray-500 hover:text-blue-500 cursor-pointer">Hiện Đại</p>
-                            <p class="m-2 my-3 ml-2 font-semibold text-gray-500 hover:text-blue-500 cursor-pointer">Cổ Trang</p>
-                            <p class="m-2 my-3 ml-2 font-semibold text-gray-500 hover:text-blue-500 cursor-pointer">Viễn Tưởng</p>
-                            <p class="m-2 my-3 ml-2 font-semibold text-gray-500 hover:text-blue-500 cursor-pointer">Hành Động</p>
-                            <p class="m-2 my-3 ml-2 font-semibold text-gray-500 hover:text-blue-500 cursor-pointer">Trinh Thám</p>
-                            <p class="m-2 my-3 ml-2 font-semibold text-gray-500 hover:text-blue-500 cursor-pointer">Tình Cảm</p>
-                            <p class="m-2 my-3 ml-2 font-semibold text-gray-500 hover:text-blue-500 cursor-pointer">Kinh Dị</p>
+                    <!-- CATEGORY -->
+                    <div class="category-wrapper">
+                        <p class="category-title">Thể Loại:</p>
+                        <div class="category-list">
+                            <p class="category-item">Hiện Đại</p>
+                            <p class="category-item">Cổ Trang</p>
+                            <p class="category-item">Viễn Tưởng</p>
+                            <p class="category-item">Hành Động</p>
+                            <p class="category-item">Trinh Thám</p>
+                            <p class="category-item">Tình Cảm</p>
+                            <p class="category-item">Kinh Dị</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full lg:w-[25%] flex flex-col justify-center mt-3 lg:mt-0">
-                    <div class="flex justify-around lg:justify-between px-4 text-sm sm:text-base lg:text-lg text-[#808089] font-semibold">
-                        <a href="/index.html" class="flex items-center space-x-1 hover:text-blue-500"> <i class="fa-solid fa-house"></i><span>Trang Chủ</span> </a>
-                        <a href="gt.html" class="flex items-center space-x-1 hover:text-blue-500"> <i class="fa-solid fa-circle-info"></i><span>Giới Thiệu</span> </a>
-                        <a href="login.html" class="flex items-center space-x-1 hover:text-blue-500"> <i class="fa-solid fa-user"></i><span>Tài Khoản</span> </a>
+                <!-- RIGHT: NAV -->
+                <div class="header-right">
+                    <div class="nav-links">
+                        <a href="/spck-bookway-nhom6/index.html"><i class="fa-solid fa-house"></i> Trang Chủ</a>
+                        <a href="/spck-bookway-nhom6/html/gt.html"><i class="fa-solid fa-circle-info"></i> Giới Thiệu</a>
+                        <a href="/spck-bookway-nhom6/html/login.html"><i class="fa-solid fa-user"></i> Tài Khoản</a>
                     </div>
 
-                    <div class="flex justify-center items-center mt-3 text-sm sm:text-base px-3">
-                        <img src="https://salt.tikicdn.com/ts/upload/88/5c/9d/f5ee506836792eb7775e527ef8350a44.png" alt="" width="30" class="mr-2" />
-                        <p class="font-semibold text-[#808089]">Giao đến: <span class="text-black font-medium">Q. Hoàn Kiếm, Hà Nội</span></p>
+                    <div class="delivery">
+                        <img src="https://salt.tikicdn.com/ts/upload/88/5c/9d/f5ee506836792eb7775e527ef8350a44.png" width="30" />
+                        <p>Giao đến: <span>Đồng Nai</span></p>
                     </div>
                 </div>
             </div>
 
-            <div class="navbar bg-base-100 shadow-sm overflow-x-auto whitespace-nowrap px-4">
-                <div class="flex items-center space-x-5 text-sm sm:text-[16px] font-semibold min-w-max">
-                    <p class="flex items-center"><img src="https://salt.tikicdn.com/ts/upload/96/76/a3/16324a16c76ee4f507d5777608dab831.png" class="w-5 h-5 mr-2" />100% hàng thật</p>
-                    <p class="flex items-center"><img src="https://salt.tikicdn.com/ts/upload/11/09/ec/456a2a8c308c2de089a34bbfef1c757b.png" class="w-5 h-5 mr-2" />Freeship mọi hóa đơn</p>
-                    <p class="flex items-center"><img src="https://salt.tikicdn.com/ts/upload/0b/f2/19/c03ae8f46956eca66845fb9aaadeca1e.png" class="w-5 h-5 mr-2" />Hoàn 200% nếu hàng giả</p>
-                    <p class="flex items-center"><img src="https://salt.tikicdn.com/ts/upload/3a/f4/7d/86ca29927e9b360dcec43dccb85d2061.png" class="w-5 h-5 mr-2" />30 ngày đổi trả</p>
-                    <p class="flex items-center"><img src="https://salt.tikicdn.com/ts/upload/87/98/77/fc33e3d472fc4ce4bae8c835784b707a.png" class="w-5 h-5 mr-2" />Giao nhanh 2h</p>
-                    <p class="flex items-center"><img src="https://salt.tikicdn.com/ts/upload/6a/81/06/0675ef5512c275a594d5ec1d58c37861.png" class="w-5 h-5 mr-2" />Giá siêu rẻ</p>
+            <!-- NAVBAR INFO -->
+            <div class="navbar">
+                <div class="navbar-content">
+                    <p><img src="https://salt.tikicdn.com/ts/upload/96/76/a3/16324a16c76ee4f507d5777608dab831.png" />100% hàng thật</p>
+                    <p><img src="https://salt.tikicdn.com/ts/upload/11/09/ec/456a2a8c308c2de089a34bbfef1c757b.png" />Freeship mọi hóa đơn</p>
+                    <p><img src="https://salt.tikicdn.com/ts/upload/0b/f2/19/c03ae8f46956eca66845fb9aaadeca1e.png" />Hoàn 200% nếu hàng giả</p>
+                    <p><img src="https://salt.tikicdn.com/ts/upload/3a/f4/7d/86ca29927e9b360dcec43dccb85d2061.png" />30 ngày đổi trả</p>
+                    <p><img src="https://salt.tikicdn.com/ts/upload/87/98/77/fc33e3d472fc4ce4bae8c835784b707a.png" />Giao nhanh 2h</p>
+                    <p><img src="https://salt.tikicdn.com/ts/upload/6a/81/06/0675ef5512c275a594d5ec1d58c37861.png" />Giá siêu rẻ</p>
                 </div>
             </div>
-        </section>
+        </header>
+        <section class="about-section">
+            <h3>Giới thiệu chung</h3>
 
-        <section class="bg-gray-300 shadow-lg mt-20 rounded-2xl">
-            <h3 class="text-4xl font-bold text-gray-800 text-center pt-5">Giới thiệu chung</h3>
-            <div class="w-full p-2 relative mt-1 mb-10">
-                <div class="w-full">
-                    <div class="pb-10">
-                        <p class="mt-3 text-2xl font-sans">
-                            -Nhà Sách BookStore cung cấp đa dạng sản phẩm, từ sách ngoại ngữ, sách tiếng Việt đến văn phòng phẩm và quà lưu niệm. Hàng trăm ngàn sản phẩm đến từ nhiều nhà cung cấp
-                            trong và ngoài nước, đảm bảo sự lựa chọn phong phú cho khách hàng.
-                        </p>
-                        <div class="mt-3 text-2xl font-sans">
-                            <ul class="text-2xl">
-                                -Nhà Sách BookStore thường xuyên có các chương trình khuyến mãi hấp dẫn như:
-                                <li><strong>+Giao hàng nhanh BSnow:</strong> Miễn phí vận chuyển, giao hàng trong 2 giờ tại Hà Nội và TP. Hồ Chí Minh.</li>
-                                <li><strong>+Bookcare:</strong> Dịch vụ bọc sách plastic cao cấp, bảo vệ sách hiệu quả.</li>
-                                <li><strong>+Miễn phí vận chuyển:</strong> Áp dụng cho đơn hàng từ 150.000đ tại Hà Nội và TP. Hồ Chí Minh, 250.000đ cho các tỉnh thành khác.</li>
-                                <li><strong>+Sách hay BookStore khuyên đọc:</strong> Giới thiệu những đầu sách hay, được giảm giá.</li>
-                                <li><strong>+Mã giảm giá BookStore:</strong> Thường xuyên cập nhật mã giảm giá, voucher hấp dẫn.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="about-content">
+                <p>
+                    👋 Book way Đã Sẵn Sàng, Chờ Bạn Khám Phá!
+Bạn thuộc hệ "mê hường phấn" hay team "thích cảm giác mạnh"? Dù gu của bạn là gì, tiệm sách của tụi mình cũng có sẵn một chiếc menu "đậm vị" để bạn nhâm nhi cả ngày không chán. ☕📚
+Tụi mình tin là mỗi cuốn sách đều chọn đúng chủ nhân vào lúc họ cần nó nhất. Check nhanh xem hôm nay "tần số" của bạn trùng với góc nào nhé:
+✨ Menu "Siêu Đa Dạng" Tại Tiệm:
+• Tình Cảm & Hiện Đại: Dành cho những tâm hồn đang cần một chút "vitamin ngọt ngào" hoặc những câu chuyện chữa lành cực "soft".
+• Cổ Trang: Xuyên không về quá khứ, đắm mình trong những chuyện tình và âm mưu kinh điển đầy khí chất.
+• Trinh Thám & Kinh Dị: Dành cho team "gan dạ", thích suy luận hack não hay muốn trải nghiệm cảm giác nổi da gà đêm khuya. 👻
+• Viễn Tưởng & Hành Động: Bước vào những thế giới mới lạ, nơi trí tưởng tượng bay xa cùng những pha "combat" cực cháy.
+Tại sao nên "ghé chân" tại đây?
+1. Chất lượng 10/10: Sách mới, bìa xinh, cầm là mê, đọc là phê.
+2. Ship nhanh như chớp: Hiểu tâm lý "đã thèm là phải có ngay", tụi mình đóng gói thần tốc để sách đến tay bạn sớm nhất.
+3. Hỗ trợ hết mình: Đang phân vân không biết đọc gì? Cứ "ting ting" cho tụi mình, team tư vấn sẽ giúp bạn tìm được chân ái!
+Dù hôm nay của bạn là một nốt trầm hay một bản nhạc sôi động, hy vọng bạn sẽ tìm thấy một cuốn sách làm "tri kỷ" tại đây. Chọn được em nào ưng ý thì đừng ngần ngại cho vào giỏ hàng ngay nhé, vì niềm vui thì không nên trì hoãn đâu nè!
+                </p>
+
+                <ul>
+                    -Nhà Sách Book Way thường xuyên có các chương trình khuyến mãi hấp dẫn như:
+                    <li><strong>+Giao hàng nhanh BSnow:</strong> Miễn phí vận chuyển, giao hàng trong 2 giờ.</li>
+                    <li><strong>+Bookcare:</strong> Dịch vụ bọc sách plastic cao cấp.</li>
+                    <li><strong>+Miễn phí vận chuyển:</strong> Áp dụng cho đơn hàng từ 150.000đ.</li>
+                    <li><strong>+Sách hay Book Way khuyên đọc:</strong> Giới thiệu đầu sách hay.</li>
+                    <li><strong>+Mã giảm giá Book Way:</strong> Cập nhật voucher hấp dẫn.</li>
+                </ul>
             </div>
         </section>
         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>

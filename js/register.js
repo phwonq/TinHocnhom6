@@ -65,6 +65,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
         //nếu tất cả đều hợp lệ, chuyển hướng đến trang đăng nhập
         alert("Registration successful!");
-        window.location.href = "/html/login.html";
+        window.location.href = "/spck-bookway-nhom6/html/login.html";
     });
 });

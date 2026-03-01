@@ -5,10 +5,11 @@ const author = document.getElementById("book-author");
 const bookOriginalPrice = document.getElementById("book-price-original");
 const bookPercent = document.getElementById("book-discount");
 const image = document.getElementById("book-image");
+const category = document.getElementById("book-category");
 let imagePreview = document.getElementById("image-preview");
 
 const queryString = window.location.search;
-// lấy ra danh sách món ăn từ localStorage
+// lấy ra danh sách  từ localStorage
 const books = JSON.parse(localStorage.getItem("books")) || [];
 
 // lấy id từ URL
@@ -24,6 +25,7 @@ if (book) {
     bookOriginalPrice.value = book.money;
     bookPercent.value = book.discount;
     image.value = book.image;
+    category.value = book.category;
 }
 
 btnEditbook.addEventListener("click", () => {
@@ -52,6 +54,10 @@ btnEditbook.addEventListener("click", () => {
         alert("Vui lòng nhập URL hình ảnh sách");
         return;
     }
+     if (!category.value) {
+        alert("Vui lòng nhập thể loại sách");
+        return;
+    }
 
     // tìm index của sách cần cập nhật
     const bookIndex = books.findIndex((f) => f.id === bookId);
@@ -66,6 +72,8 @@ btnEditbook.addEventListener("click", () => {
             money: Math.round(Number(bookOriginalPrice.value)),
             discount: Math.round(Number(bookPercent.value)),
             image: image.value,
+            category: category.value,
+        
         };
 
         // lưu danh sách sách vào localStorage

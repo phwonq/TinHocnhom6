@@ -2,9 +2,11 @@ const btnCreateBook = document.getElementById("btn-create-book");
 
 btnCreateBook.addEventListener("click", (e) => {
     e.preventDefault();
+    console.log("hihi");
 
     const name = document.getElementById("book-name").value;
     const author = document.getElementById("book-author").value;
+    const category = document.getElementById("book-category").value;
 
     // Chuyển sang số và làm tròn theo VNĐ (không có số lẻ)
     const money = Math.round(Number(document.getElementById("book-price-original").value));
@@ -12,8 +14,7 @@ btnCreateBook.addEventListener("click", (e) => {
 
     const description = document.getElementById("book-description").value;
     const image = document.getElementById("book-image").value;
-
-    if (!name || !author || !money || !discount || !description || !image) {
+    if (!name || !author || !money || !discount || !description || !image|| !category) {
         alert("Vui lòng điền đầy đủ tất cả các thông tin!");
         return;
     }
@@ -26,11 +27,13 @@ btnCreateBook.addEventListener("click", (e) => {
         discount, // lưu số nguyên
         description,
         image,
+        category,
     };
 
     try {
         const books = JSON.parse(localStorage.getItem("books")) || [];
         books.push(newbook);
+        console.log(newbook);
         localStorage.setItem("books", JSON.stringify(books));
 
         swal.fire({
@@ -38,7 +41,7 @@ btnCreateBook.addEventListener("click", (e) => {
             icon: "success",
             willClose: () => {
                 //Chuyển hướng về trang chủ
-                window.location.href = "/index.html";
+                window.location.href = "/spck-bookway-nhom6/index.html";
             },
         });
     } catch (error) {

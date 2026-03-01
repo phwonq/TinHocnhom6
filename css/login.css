@@ -1,0 +1,106 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color:#DAF1FE; /* bg-amber-50/50 */
+    height: 100vh;
+}
+
+/* Wrapper */
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+/* Box form */
+.login-box {
+    background: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 380px;
+    padding: 32px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+}
+
+/* Title */
+.login-title {
+    color: #2563eb;
+    font-size: 28px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+/* Label */
+.login-box label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    color: #374151;
+    font-weight: 600;
+}
+
+/* Input */
+.login-box input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    color: #1f2937;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.login-box input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: white;
+}
+
+/* Button */
+.login-box button {
+    margin-top: 28px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background: #1d4ed8;
+}
+
+/* Register link */
+.register-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.register-link a {
+    color: #3b82f6;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.register-link a:hover {
+    color: #1d4ed8;
+}
