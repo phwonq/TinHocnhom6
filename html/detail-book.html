@@ -84,13 +84,26 @@
         <!-- Main -->
         <section class="main-section">
     <div class="action-buttons">
-        <div>
-            <button id="btn-delete-book" class="btn btn-error">Xóa sách</button>
-        </div>
-        <div>
-            <a href="/spck-bookway-nhom6/html/edit-book.html" id="btn-edit-book" class="btn btn-error">Sửa sách</a>
-        </div>
+
+        <!-- NÚT THÊM VÀO GIỎ -->
+    <div>
+        <button id="btn-add-cart" class="btn-add-cart">
+            <i class="fa-solid fa-cart-plus"></i>
+            Thêm vào giỏ
+        </button>
     </div>
+
+    <div>
+        <button id="btn-delete-book" class="btn btn-error">Xóa sách</button>
+    </div>
+
+    <div>
+        <a href="/spck-bookway-nhom6/html/edit-book.html" id="btn-edit-book" class="btn btn-error">
+            Sửa sách
+        </a>
+    </div>
+</div>
+
 
     <div class="detail-wrapper">
         <div class="detail-box">
@@ -142,6 +155,8 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/spck-bookway-nhom6/js/render-detail-book.js"></script>
         <script src="/spck-bookway-nhom6/js/delete-book.js"></script>
+        <script src="/spck-bookway-nhom6/js/detailcart.js"></script>
+
         <!-- <script src="/js/edit-book.js"></script> -->
     </body>
 </html>

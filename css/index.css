@@ -22,6 +22,37 @@ body{
     background-color: #E5F0FA
 }
 
+.cart-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    background-color: #4f73d9; /* xanh giống ảnh */
+    color: white;
+    text-decoration: none;
+
+    padding: 8px 16px;
+    border-radius: 6px;
+
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: #3f5ec4; /* hover đậm hơn */
+}
+
+#cart-count {
+    background: white;
+    color: #4f73d9;
+    font-size: 12px;
+    font-weight: bold;
+
+    padding: 2px 6px;
+    border-radius: 20px;
+}
+
+
 .category-item {
     cursor: pointer;
 }

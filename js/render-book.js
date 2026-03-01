@@ -68,6 +68,27 @@ categoryItems.forEach((item) => {
     });
 });
 
+function updateCartCount() {
+    let giohang = JSON.parse(localStorage.getItem("giohang")) || [];
+
+    let totalQuantity = 0;
+
+    giohang.forEach(item => {
+        totalQuantity += item.quantity;
+    });
+
+    const countElement = document.getElementById("cart-count");
+
+    if (countElement) {
+        countElement.innerText = totalQuantity;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    updateCartCount();
+});
+
+
 
 // ===== LOAD ALL BOOKS KHI VÀO TRANG =====
 renderBooks(books);
